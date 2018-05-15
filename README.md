@@ -24,3 +24,9 @@ tests["Do we have chart titles?"] = true === /w*d*/.test(jsonData[0].chart_title
 ```
 tests["Is the report uploaded to s3?"] = responseBody.has("https://s3-ap-southeast-2.amazonaws.com/reports.mywebsite.com");
 ```
+
+## Generating a random UUID
+
+```
+pm.setGlobalVariable("v4uuid", 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8); return v.toString(16); }));
+```
