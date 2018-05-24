@@ -12,12 +12,12 @@ tests["Do we have a PDF?"] = jsonData.status.value === 'pdf';
 
 ```
 var jsonData = JSON.parse(responseBody);
-tests["Do we have chart ids?"] = true === /d*/.test(jsonData[0].chart_id);
+tests["Do we have chart ids?"] = true === /\d*/.test(jsonData[0].chart_id);
 ```
 
 ```
 var jsonData = JSON.parse(responseBody);
-tests["Do we have chart titles?"] = true === /w*d*/.test(jsonData[0].chart_title);
+tests["Do we have chart titles?"] = true === /\w*d*/.test(jsonData[0].chart_title);
 ```
 ## Searching for a string in the body
 
