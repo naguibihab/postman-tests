@@ -32,7 +32,13 @@ pm.globals.set("v4uuid", 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
 ```
 
 ## Getting random user data
-pm.sendRequest("https://randomuser.me/api/?nat=au&inc=cell", (err, res) => {
-    pm.environment.set('mobile', res.json().results[0].cell)
-    console.log(res.json().results[0].cell);
-})
+
+```
+pm.sendRequest('https://randomuser.me/api/?nat=au&inc=cell', function (err, res) {
+    if (err) {
+        console.log(err);
+    } else {
+        pm.globals.set("mobile", res.json().results[0].cell);
+    }
+});
+```
